@@ -1,7 +1,7 @@
 // Airtable configuration
-const AIRTABLE_BASE_ID = 'YOUR_BASE_ID'; // Replace with your Airtable base ID
+const AIRTABLE_BASE_ID = 'appjNAFBzrT1CfFiP'; // Replace with your Airtable base ID
 const AIRTABLE_TABLE_NAME = 'Tributes'; // Your table name
-const AIRTABLE_API_KEY = 'YOUR_API_KEY'; // Replace with your API key
+const AIRTABLE_API_KEY = 'pat8ImLrQfZlLMRdX.c1d1e4d0615b4cba93991b8e6995e0bd36a4d5048953b5ab26276ec35b863547'; // Replace with your API key
 
 const AIRTABLE_API_URL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
 

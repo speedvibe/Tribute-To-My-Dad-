@@ -8,6 +8,7 @@ import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import memorialHero from '@/assets/memorial-hero.jpg';
 
+
 const Index = () => {
   const [tributes, setTributes] = useState<Tribute[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -15,10 +16,13 @@ const Index = () => {
 
   // Memorial details - customize these
   const memorialInfo = {
-    name: "John Michael Anderson",
-    dates: "March 15, 1952 - December 10, 2024",
+    name: "Folafemi Solanke",
+    aka: "(Baba Arrange)",
+    dates: "May 6, 1940 – Feb 23, 2001",
     subtitle: "Beloved Father, Husband, and Friend"
   };
+
+
 
   useEffect(() => {
     loadTributes();
@@ -54,36 +58,37 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background bg-opacity-20">
       {/* Hero Section with background image */}
       <div className="relative">
         <div 
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-10"
           style={{
-            backgroundImage: `url(${memorialHero})`,
+            backgroundImage: 'url("./memorial.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            opacity: 0.3
+            opacity: 0.5
           }}
         />
         <Hero 
           name={memorialInfo.name}
+          aka={memorialInfo.aka}
           dates={memorialInfo.dates}
           subtitle={memorialInfo.subtitle}
         />
       </div>
 
       {/* Setup Instructions */}
-      {showSetup && <AirtableSetup />}
+      {/* {showSetup && <AirtableSetup />} */}
 
       {/* Tributes Section */}
-      <section className="py-16 px-4">
+      <section className="p-10 md:py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="font-serif text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4">
               Tributes & Memories
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-sm md:text-base">
               Share your memories and celebrate a life well lived
             </p>
           </div>
@@ -96,7 +101,7 @@ const Index = () => {
               ))}
             </div>
           ) : tributes.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 md:mb-16">
               {tributes.map((tribute) => (
                 <TributeCard
                   key={tribute.id}
@@ -115,12 +120,12 @@ const Index = () => {
             </div>
           )}
 
-          <Separator className="mb-16" />
+          <Separator className=" mb-10 md:mb-16" />
 
           {/* Add Tribute Form */}
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h3 className="font-serif text-3xl font-bold text-foreground mb-4">
+              <h3 className="font-serif text-xl md:text-2xl lg:text-3xl  font-bold text-foreground mb-4">
                 Share Your Tribute
               </h3>
               <p className="text-muted-foreground">

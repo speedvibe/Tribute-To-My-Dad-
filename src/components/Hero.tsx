@@ -1,39 +1,43 @@
-import { Flower2 } from 'lucide-react';
+import { Flower2 } from "lucide-react";
 
 interface HeroProps {
   name: string;
   dates: string;
   subtitle?: string;
+  aka?: string;
 }
 
-export function Hero({ name, dates, subtitle }: HeroProps) {
+export function Hero({ name, dates, subtitle, aka }: HeroProps) {
   return (
     <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-dawn" />
       <div className="absolute inset-0 bg-gradient-hero" />
-      
+
       {/* Content */}
       <div className="relative z-10 text-center px-4 py-16">
         <Flower2 className="w-12 h-12 mx-auto mb-6 text-primary/40" />
-        
-        <h1 className="font-serif text-5xl md:text-7xl font-bold text-primary mb-4">
+
+        <h1 className="font-serif text-4xl md:text-6xl font-bold text-primary mb-1">
           {name}
         </h1>
-        
-        <p className="text-xl md:text-2xl text-foreground/70 mb-2">
-          {dates}
-        </p>
-        
+         <h1 className="font-serif text-2xl md:text-4xl font-bold text-primary mb-4">
+          {aka}
+        </h1>
+
+        <p className="text-lg md:text-2xl text-foreground/70 mb-2 font-semibold">{dates}</p>
+
         {subtitle && (
-          <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
-            {subtitle}
+          <p className="text-base md:text-lg text-gray-700 mt-6 max-w-2xl mx-auto font-semibold">
+            {'25 Years Remembrance'}
           </p>
         )}
-        
+
         <div className="mt-12">
           <p className="text-sm text-muted-foreground italic">
-            "Those we love don't go away, they walk beside us every day"
+            "A father, mentor, and friend to many. Though you left us in 2001,
+            your legacy, values, and love remain alive in our hearts. Today we
+            gather to honor your memory and celebrate the life you lived."
           </p>
         </div>
       </div>

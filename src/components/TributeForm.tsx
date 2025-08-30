@@ -70,7 +70,7 @@ export function TributeForm({ onSubmit }: TributeFormProps) {
             id="name"
             value={formData.name}
             onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-            placeholder="John Smith"
+            placeholder="John Ade"
             required
             className="bg-card"
           />
