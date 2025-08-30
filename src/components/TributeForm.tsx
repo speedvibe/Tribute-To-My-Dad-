@@ -62,64 +62,64 @@ export function TributeForm({ onSubmit }: TributeFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div className="space-y-2">
-          <Label htmlFor="name">Your Name *</Label>
+          <Label htmlFor="name" className="text-sm sm:text-base">Your Name *</Label>
           <Input
             id="name"
             value={formData.name}
             onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
             placeholder="John Smith"
             required
-            className="bg-card"
+            className="bg-card text-sm sm:text-base"
           />
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="email">Email (optional)</Label>
+          <Label htmlFor="email" className="text-sm sm:text-base">Email (optional)</Label>
           <Input
             id="email"
             type="email"
             value={formData.email}
             onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
             placeholder="john@example.com"
-            className="bg-card"
+            className="bg-card text-sm sm:text-base"
           />
         </div>
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="relationship">Your Relationship (optional)</Label>
+        <Label htmlFor="relationship" className="text-sm sm:text-base">Your Relationship (optional)</Label>
         <Input
           id="relationship"
           value={formData.relationship}
           onChange={(e) => setFormData(prev => ({ ...prev, relationship: e.target.value }))}
           placeholder="Friend, Colleague, Family..."
-          className="bg-card"
+          className="bg-card text-sm sm:text-base"
         />
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="message">Your Tribute Message *</Label>
+        <Label htmlFor="message" className="text-sm sm:text-base">Your Tribute Message *</Label>
         <Textarea
           id="message"
           value={formData.message}
           onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
           placeholder="Share your memories, thoughts, or condolences..."
-          rows={6}
+          rows={5}
           required
-          className="bg-card resize-none"
+          className="bg-card resize-none text-sm sm:text-base"
         />
       </div>
       
       <Button 
         type="submit" 
         disabled={isSubmitting}
-        className="w-full md:w-auto"
+        className="w-full sm:w-auto"
         size="lg"
       >
-        <Send className="w-4 h-4 mr-2" />
+        <Send className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
         {isSubmitting ? 'Sending...' : 'Share Tribute'}
       </Button>
     </form>

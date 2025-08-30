@@ -77,26 +77,26 @@ const Index = () => {
       {showSetup && <AirtableSetup />}
 
       {/* Tributes Section */}
-      <section className="py-16 px-4">
+      <section className="py-12 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
               Tributes & Memories
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-sm sm:text-base text-muted-foreground">
               Share your memories and celebrate a life well lived
             </p>
           </div>
 
           {/* Tributes Grid */}
           {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
               {[...Array(6)].map((_, i) => (
                 <Skeleton key={i} className="h-48" />
               ))}
             </div>
           ) : tributes.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
               {tributes.map((tribute) => (
                 <TributeCard
                   key={tribute.id}
@@ -108,22 +108,22 @@ const Index = () => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12 mb-16">
-              <p className="text-muted-foreground">
+            <div className="text-center py-8 sm:py-12 mb-12 sm:mb-16">
+              <p className="text-sm sm:text-base text-muted-foreground">
                 Be the first to share a tribute
               </p>
             </div>
           )}
 
-          <Separator className="mb-16" />
+          <Separator className="mb-12 sm:mb-16" />
 
           {/* Add Tribute Form */}
           <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-8">
-              <h3 className="font-serif text-3xl font-bold text-foreground mb-4">
+            <div className="text-center mb-6 sm:mb-8">
+              <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3 sm:mb-4">
                 Share Your Tribute
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-sm sm:text-base text-muted-foreground px-4">
                 Your words of remembrance will be cherished forever
               </p>
             </div>
