@@ -15,13 +15,13 @@ export function TributeCard({ name, message, relationship, createdAt }: TributeC
         <div>
           <h3 className="font-serif  text-lg md:text-xl font-semibold text-foreground">{name}</h3>
           {relationship && (
-            <p className="text-sm text-muted-foreground mt-1">{relationship}</p>
+            <p className="text-xs sm:text-sm text-muted-foreground mt-1">{relationship}</p>
           )}
         </div>
         <Heart color='red' className="w-4 h-4 text-primary/30 bg-re" />
       </div>
       
-      <p className="text-foreground/90 leading-relaxed mb-4 whitespace-pre-wrap">
+      <p className="text-sm sm:text-base text-foreground/90 leading-relaxed mb-3 sm:mb-4 whitespace-pre-wrap line-clamp-5">
         {message}
       </p>
       

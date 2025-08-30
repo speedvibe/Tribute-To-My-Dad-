@@ -9,16 +9,16 @@ interface HeroProps {
 
 export function Hero({ name, dates, subtitle, aka }: HeroProps) {
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[50vh] sm:min-h-[60vh] flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-dawn" />
       <div className="absolute inset-0 bg-gradient-hero" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 py-16">
-        <Flower2 className="w-12 h-12 mx-auto mb-6 text-primary/40" />
+      <div className="relative z-10 text-center px-4 sm:px-6 py-12 sm:py-16">
+        <Flower2 className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4 sm:mb-6 text-primary/40" />
 
-        <h1 className="font-serif text-4xl md:text-6xl font-bold text-primary mb-1">
+        <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-bold text-primary mb-3 sm:mb-1">
           {name}
         </h1>
          <h1 className="font-serif text-2xl md:text-4xl font-bold text-primary mb-4">

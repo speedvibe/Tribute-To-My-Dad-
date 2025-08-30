@@ -95,7 +95,7 @@ const Index = () => {
 
           {/* Tributes Grid */}
           {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
               {[...Array(6)].map((_, i) => (
                 <Skeleton key={i} className="h-48" />
               ))}
@@ -113,8 +113,8 @@ const Index = () => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12 mb-16">
-              <p className="text-muted-foreground">
+            <div className="text-center py-8 sm:py-12 mb-12 sm:mb-16">
+              <p className="text-sm sm:text-base text-muted-foreground">
                 Be the first to share a tribute
               </p>
             </div>
@@ -128,7 +128,7 @@ const Index = () => {
               <h3 className="font-serif text-xl md:text-2xl lg:text-3xl  font-bold text-foreground mb-4">
                 Share Your Tribute
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-sm sm:text-base text-muted-foreground px-4">
                 Your words of remembrance will be cherished forever
               </p>
             </div>
