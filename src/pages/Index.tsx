@@ -6,6 +6,7 @@ import { AirtableSetup } from '@/components/AirtableSetup';
 import { fetchTributes, submitTribute, type Tribute } from '@/services/airtable';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Gallery } from '@/components/Gallery';
 import memorialHero from '@/assets/memorial-hero.jpg';
 
 
@@ -58,16 +59,16 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background bg-opacity-20">
+    <div className="min-h-screen bg-background ">
       {/* Hero Section with background image */}
-      <div className="relative">
+      <div className="relative min-h-screen">
         <div 
           className="absolute inset-0 z-10"
           style={{
             backgroundImage: 'url("./memorial.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            opacity: 0.5
+            // opacity: 0.5
           }}
         />
         <Hero 
@@ -80,6 +81,17 @@ const Index = () => {
 
       {/* Setup Instructions */}
       {/* {showSetup && <AirtableSetup />} */}
+
+
+      {/* Gallery Section */}
+      <Gallery images={[
+        '/memorial.jpg',
+        '/placeholder.svg',
+        '/memorial.jpg',
+        '/placeholder.svg',
+        '/memorial.jpg',
+        '/placeholder.svg'
+      ]} />
 
       {/* Tributes Section */}
       <section className="p-10 md:py-16 px-4">
