@@ -61,7 +61,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background ">
       {/* Hero Section with background image */}
-      <div className="relative min-h-screen">
+      <div className="relative min-h-[85vh]">
         <div 
           className="absolute inset-0 z-10"
           style={{
@@ -135,7 +135,7 @@ const Index = () => {
           <Separator className=" mb-10 md:mb-16" />
 
           {/* Add Tribute Form */}
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto" id='tribute-form'>
             <div className="text-center mb-8">
               <h3 className="font-serif text-xl md:text-2xl lg:text-3xl  font-bold text-foreground mb-4">
                 Share Your Tribute
