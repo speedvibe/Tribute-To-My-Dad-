@@ -7,7 +7,6 @@ import { fetchTributes, submitTribute, type Tribute } from '@/services/airtable'
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Gallery } from '@/components/Gallery';
-import memorialHero from '@/assets/memorial-hero.jpg';
 
 
 const Index = () => {

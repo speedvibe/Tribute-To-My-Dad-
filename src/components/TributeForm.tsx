@@ -13,11 +13,13 @@ interface TributeFormProps {
     relationship: string;
     message: string;
   }) => Promise<void>;
+  isSubmitting?: boolean;
 }
 
-export function TributeForm({ onSubmit }: TributeFormProps) {
+export function TributeForm({ onSubmit, isSubmitting: externalSubmitting }: TributeFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const submitting = externalSubmitting ?? isSubmitting;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -115,12 +117,12 @@ export function TributeForm({ onSubmit }: TributeFormProps) {
       
       <Button 
         type="submit" 
-        disabled={isSubmitting}
+        disabled={submitting}
         className="w-full sm:w-auto"
         size="lg"
       >
         <Send className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-        {isSubmitting ? 'Sending...' : 'Share Tribute'}
+        {submitting ? 'Sending...' : 'Share Tribute'}
       </Button>
     </form>
   );
