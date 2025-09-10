@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react';
-import { Hero } from '@/components/Hero';
-import { TributeCard } from '@/components/TributeCard';
-import { TributeForm } from '@/components/TributeForm';
-import { AirtableSetup } from '@/components/AirtableSetup';
-import { fetchTributes, submitTribute, type Tribute } from '@/services/airtable';
-import { Separator } from '@/components/ui/separator';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Gallery } from '@/components/Gallery';
-
+import { useState, useEffect } from "react";
+import { Hero } from "@/components/Hero";
+import { TributeCard } from "@/components/TributeCard";
+import { TributeForm } from "@/components/TributeForm";
+import { AirtableSetup } from "@/components/AirtableSetup";
+import {
+  fetchTributes,
+  submitTribute,
+  type Tribute,
+} from "@/services/airtable";
+import { Separator } from "@/components/ui/separator";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Gallery } from "@/components/Gallery";
 
 const Index = () => {
   const [tributes, setTributes] = useState<Tribute[]>([]);
@@ -19,17 +22,16 @@ const Index = () => {
     name: "Folafemi Solanke",
     aka: "(Baba Arrange)",
     dates: "May 6, 1940 – Feb 23, 2001",
-    subtitle: "Beloved Father, Husband, and Friend"
+    subtitle: "Beloved Father, Husband, and Friend",
   };
-
-
 
   useEffect(() => {
     loadTributes();
     // Check if Airtable is configured
     const checkConfig = () => {
-      const isConfigured = !window.location.href.includes('localhost') || 
-                           localStorage.getItem('airtable-configured');
+      const isConfigured =
+        !window.location.href.includes("localhost") ||
+        localStorage.getItem("airtable-configured");
       setShowSetup(!isConfigured);
     };
     checkConfig();
@@ -41,7 +43,7 @@ const Index = () => {
       const data = await fetchTributes();
       setTributes(data);
     } catch (error) {
-      console.error('Error loading tributes:', error);
+      console.error("Error loading tributes:", error);
     } finally {
       setIsLoading(false);
     }
@@ -58,19 +60,20 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background ">
+    <div className="min-h-screen bg-background  ">
       {/* Hero Section with background image */}
-      <div className="relative min-h-[85vh]">
-        <div 
+      <div className="relative h-[65vh] md:min-h-[85vh]">
+        <div
           className="absolute inset-0 z-10"
           style={{
             backgroundImage: 'url("./memorial.jpg")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             // opacity: 0.5
           }}
         />
-        <Hero 
+        <div className="bg-[#462d2d]/30 h-full w-full absolute top-0 right-0 left-0 z-10" />
+        <Hero
           name={memorialInfo.name}
           aka={memorialInfo.aka}
           dates={memorialInfo.dates}
@@ -80,17 +83,27 @@ const Index = () => {
 
       {/* Setup Instructions */}
       {/* {showSetup && <AirtableSetup />} */}
-
+      <div className="">
+        <div className="mt-8 max-w-xl mx-auto text-center p-4">
+          <p className="text-sm md:text-base text-muted-foreground italic leading-relaxed">
+            "A father, mentor, and friend to many. Though you left us in 2001,
+            your legacy, values, and love remain alive in our hearts. Today we
+            gather to honor your memory and celebrate the life you lived."
+          </p>
+        </div>
+      </div>
 
       {/* Gallery Section */}
-      <Gallery images={[
-        '/memorial.jpg',
-        '/placeholder.svg',
-        '/memorial.jpg',
-        '/placeholder.svg',
-        '/memorial.jpg',
-        '/placeholder.svg'
-      ]} />
+      <Gallery
+        images={[
+          "/memorial.jpg",
+          "/placeholder.svg",
+          "/memorial.jpg",
+          "/placeholder.svg",
+          "/memorial.jpg",
+          "/placeholder.svg",
+        ]}
+      />
 
       {/* Tributes Section */}
       <section className="p-10 md:py-16 px-4">
@@ -134,7 +147,7 @@ const Index = () => {
           <Separator className=" mb-10 md:mb-16" />
 
           {/* Add Tribute Form */}
-          <div className="max-w-2xl mx-auto" id='tribute-form'>
+          <div className="max-w-2xl mx-auto" id="tribute-form">
             <div className="text-center mb-8">
               <h3 className="font-serif text-xl md:text-2xl lg:text-3xl  font-bold text-foreground mb-4">
                 Share Your Tribute
@@ -143,7 +156,7 @@ const Index = () => {
                 Your words of remembrance will be cherished forever
               </p>
             </div>
-            
+
             <div className="memorial-card">
               <TributeForm onSubmit={handleTributeSubmit} />
             </div>
