@@ -52,7 +52,7 @@ export function Gallery({ images }: GalleryProps) {
                   <img
                     src={image}
                     alt={`Memory ${index + 1}`}
-                    className="w-full h-64 md:h-80 object-cover rounded-lg"
+                    className="w-full h-64 sm:h-72 md:h-80 object-cover rounded-lg"
                   />
                 </div>
               ))}

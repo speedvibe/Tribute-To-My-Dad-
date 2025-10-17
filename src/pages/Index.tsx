@@ -97,11 +97,18 @@ const Index = () => {
       <Gallery
         images={[
           "/memorial.jpg",
-          "/placeholder.svg",
-          "/memorial.jpg",
-          "/placeholder.svg",
-          "/memorial.jpg",
-          "/placeholder.svg",
+          "/gallery/g1.JPG",
+          "/gallery/g2.JPG",
+          "/gallery/g3.JPG",
+          "/gallery/g4.JPG",
+          "/gallery/g5.JPG",
+          "/gallery/g6.JPG",
+          "/gallery/g7.JPG",
+          "/gallery/g8.JPG",
+          "/gallery/g9.JPG",
+          "/gallery/g10.JPG",
+          "/gallery/g11.JPG",
+          "/gallery/g12.JPG",
         ]}
       />
 
