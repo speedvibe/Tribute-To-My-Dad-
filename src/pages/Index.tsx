@@ -16,6 +16,7 @@ const Index = () => {
   const [tributes, setTributes] = useState<Tribute[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showSetup, setShowSetup] = useState(true);
+  const [seeMore, setSeeMore] = useState(false);
 
   // Memorial details - customize these
   const memorialInfo = {
@@ -92,6 +93,115 @@ const Index = () => {
           </p>
         </div>
       </div>
+
+      {/* Biography Section */}
+      <section className="py-10 md:py-16 px-4 bg-muted/30">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Biography
+            </h2>
+            <p className="text-muted-foreground text-sm md:text-base">
+              The Life and Legacy of Albert Folafemi Olalekan Solanke
+            </p>
+          </div>
+
+          <div className="memorial-card p-3 md:p-8">
+            <div className="prose prose-lg max-w-none text-foreground">
+              <div className="text-center mb-6">
+                <h3 className="font-serif text-xl md:text-2xl font-semibold mb-2">
+                  May 6, 1940 – February 23, 2001
+                </h3>
+              </div>
+
+              <div className="space-y-4 text-sm md:text-base leading-relaxed">
+                <p>
+                  Mr. Albert Folafemi Olalekan Solanke was born on May 6, 1940,
+                  in Abeokuta, Ogun State, Nigeria. He lived an exceptional life
+                  marked by integrity, humility, service, and joy. His legacy
+                  continues to inspire all who were privileged to know him.
+                </p>
+
+                <p>
+                  He attended the prestigious Baptist Boys' High School (BBHS),
+                  Abeokuta, in the 1960s, where he distinguished himself as a
+                  brilliant, disciplined, and sociable student. His love for the
+                  institution endured long after graduation, as he became an
+                  active and loyal member of the BBHS Old Boys' Association,
+                  where he served meritoriously as General Secretary. His
+                  passion for unity, progress, and community spirit within the
+                  association earned him deep respect from his peers.
+                </p>
+
+                <p>
+                  Mr. Solanke built an admirable career with the Ministry of
+                  Agriculture, Abeokuta, where he served with dedication and
+                  excellence. He rose to become the Head of the Mile 6 Settler
+                  and Administration Unit, a role in which he displayed
+                  remarkable leadership, fairness, and a strong sense of
+                  responsibility. Known for his discipline and commitment, he
+                  was a dependable administrator who led by example and inspired
+                  confidence among his colleagues and subordinates.
+                </p>
+
+                <p>
+                  A man of principle, integrity, and compassion, Mr. Solanke was
+                  deeply respected for his honesty and sense of justice. His
+                  words were his bond, and his lifestyle reflected his values of
+                  hard work, faith, and service to humanity.
+                </p>
+
+                <span
+                  onClick={() => setSeeMore(false)}
+                  className="italics text-blue-600 text-center mx-auto"
+                >
+                  See more ...
+                </span>
+                {seeMore && (
+                  <>
+                    <p>
+                      He was happily married to his beloved wife, Mrs. Omotolase
+                      Adunni Solanke, and their marriage was blessed with five
+                      sons. He was a devoted husband and father who prioritized
+                      family, education, and good character. His home was one of
+                      warmth, laughter, and wisdom — a reflection of his heart
+                      and values.
+                    </p>
+
+                    <p>
+                      Beyond his career and family life, Mr. Solanke was widely
+                      known for his vibrant and social personality. Fondly
+                      called "Baba Arrange," he was the life of every occasion —
+                      cheerful, stylish, and full of positive energy. His
+                      friends and associates admired his ability to balance a
+                      responsible life with a fun-loving spirit. He loved good
+                      music, lively gatherings, and enjoyed relaxing moments
+                      over a cup of coffee or a glass of Guinness Stout, his
+                      favorite refreshment.
+                    </p>
+
+                    <p>
+                      Mr. Albert Folafemi Olalekan Solanke was, above all, a man
+                      of character, joy, and service — a true gentleman whose
+                      name evokes respect and fond memories. He lived with
+                      purpose, gave selflessly, and touched countless lives
+                      through his kindness and integrity.
+                    </p>
+
+                    <p className="font-medium italic">
+                      He passed away peacefully on February 23, 2001, but his
+                      memory remains evergreen. His life continues to shine as
+                      an enduring example of goodness, leadership, and love — a
+                      legacy that lives on in his children, family, and all who
+                      knew him.
+                    </p>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Gallery Section */}
       <Gallery
