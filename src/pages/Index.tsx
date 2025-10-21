@@ -151,12 +151,13 @@ const Index = () => {
                   hard work, faith, and service to humanity.
                 </p>
 
-                <span
-                  onClick={() => setSeeMore(false)}
-                  className="italics text-blue-600 text-center mx-auto"
+               {!seeMore && <span
+                  onClick={() => setSeeMore(true)}
+                  className="italics text-blue-600 text-center mx-auto cursor-pointer w-full"
                 >
                   See more ...
-                </span>
+                </span>}
+
                 {seeMore && (
                   <>
                     <p>
@@ -197,6 +198,13 @@ const Index = () => {
                     </p>
                   </>
                 )}
+
+                  {seeMore && <span
+                  onClick={() => setSeeMore(false)}
+                  className="italics text-blue-600 text-center mx-auto cursor-pointer w-full"
+                >
+                  See Less ...
+                </span>}
               </div>
             </div>
           </div>
